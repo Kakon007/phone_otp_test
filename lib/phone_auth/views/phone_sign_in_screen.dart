@@ -1,10 +1,12 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../../components/alternative_way_text.dart';
 import '../../components/constants.dart';
 import '../../components/design_button.dart';
 import '../../components/size_config.dart';
+import 'phone_otp_verification_screen.dart';
 
 TextEditingController phnNameCntrlr = TextEditingController();
 TextEditingController phnCntrlr = TextEditingController();
@@ -45,7 +47,7 @@ class _PhoneSignUpState extends State<PhoneSignUp> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.pop(context);
+                        //Navigator.pop(context);
                       },
                       child: Container(
                         decoration: BoxDecoration(
@@ -213,7 +215,22 @@ class _PhoneSignUpState extends State<PhoneSignUp> {
                   ),
                   color: const Color(0xFF2DBC77),
                   onPressed: () async {
-                    if (_formKey.currentState!.validate()) {}
+                    if (_formKey.currentState!.validate()) {
+                      print('Pressed');
+                      Navigator.push(
+                        context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: PhoneVerification(
+                          countyCode: countryCode,
+                          //otp: PhoneSignUpPostM.otp!,
+                          name: phnNameCntrlr.text,
+                          phoneNumber: phnCntrlr.text,
+                          createdAt: DateTime.now(),
+                        ),
+                      ),
+                      );
+                    }
                   }),
               const SizedBox(height: 10.0),
               AlternativeWayText(

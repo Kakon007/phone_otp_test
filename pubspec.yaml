@@ -14,6 +14,11 @@ environment:
 dependencies:
   page_transition: ^2.0.5
   country_code_picker: ^2.0.2
+  http: ^0.13.4
+  flutter_easyloading: ^3.0.5
+  connectivity_plus: ^2.3.2
+  dartz: ^0.10.1
+  provider: ^6.0.3
   flutter:
     sdk: flutter
 
@@ -33,3 +38,5 @@ flutter:
 
 
   uses-material-design: true
+  assets:
+    - assets/images/ph.png

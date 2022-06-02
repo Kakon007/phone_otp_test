@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'components/size_config.dart';
-import 'phone_auth/views/phone_sign_up_screen.dart';
+import 'phone_auth/views/phone_sign_in_screen.dart';
 
 
 
